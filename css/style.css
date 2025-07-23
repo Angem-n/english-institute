@@ -53,6 +53,7 @@
             align-items: center;
             gap: 35px;
             list-style: none;
+            
         }
 
         .nav-link {
@@ -72,7 +73,7 @@
         }
 
         .nav-link.active {
-            color: #ff4757;
+            color: #181010;
             font-weight: 600;
         }
 
@@ -159,6 +160,10 @@
                 display: none;
             }
 
+            .subscribe-btn {
+                display: none;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -169,6 +174,109 @@
 
             .logo-text {
                 font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+
+            .mobile-menu {
+                padding: 0;
+            }
+
+            .mobile-nav-menu {
+                padding: 15px 20px;
+            }
+
+            .mobile-nav-menu .nav-link {
+                font-size: 16px;
+                padding: 15px 0;
+                color: #333;
+            }
+
+            .mobile-nav-menu .nav-link:hover {
+                background-color: #f8f9fa;
+                margin: 0 -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .mobile-subscribe-btn {
+                margin: 15px 20px 20px;
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+        }
+
+        /* Small mobile responsive */
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+
+            .logo-icon {
+                width: 26px;
+                height: 26px;
+                font-size: 14px;
+            }
+
+            .mobile-nav-menu {
+                padding: 10px 15px;
+            }
+
+            .mobile-nav-menu .nav-link {
+                font-size: 15px;
+                padding: 12px 0;
+            }
+
+            .mobile-nav-menu .nav-link:hover {
+                margin: 0 -15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .mobile-subscribe-btn {
+                margin: 10px 15px 15px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .demo-content {
+                padding: 40px 15px;
+            }
+
+            .demo-content h1 {
+                font-size: 2rem;
+            }
+
+            .demo-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1200px) {
+            .nav-container {
+                padding: 18px 20px;
+            }
+
+            .nav-menu {
+                gap: 40px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .subscribe-btn {
+                padding: 12px 28px;
+                font-size: 15px;
             }
         }
 
@@ -190,4 +298,8 @@
             color: #6c757d;
             font-size: 1.1rem;
             line-height: 1.6;
+        }
+        .carousel-item img {
+            height: 100vh; 
+            object-fit: cover; 
         }

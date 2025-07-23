@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-     <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">📚</div>
-                <span class="logo-text">English Institute</span>
+                <img src="img/WhatsApp Image 2025-06-24 at 09.37.32-Photoroom.png" alt="education" width="100">
             </a>
 
             <ul class="nav-menu">
@@ -41,11 +43,33 @@
             <a href="#" class="subscribe-btn mobile-subscribe-btn">S'inscrire</a>
         </div>
     </nav>
+    <section class="carousel">
+        <div id="home" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/D14D39F4-C42C-4904-B8955A8E42366E08.jpeg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/Sobrevuelos_CDMX_HJ2A4913_(25514321687)_(cropped).jpg" class="d-block w-100"
+                    alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/infrastructures_2.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
 
-    <div class="demo-content">
-        <h1>Bienvenue à English Institute</h1>
-        <p>Apprenez l'anglais avec nos cours innovants et nos méthodes d'enseignement modernes. Notre équipe d'experts vous accompagne dans votre apprentissage pour atteindre vos objectifs linguistiques.</p>
-    </div>
+        </div>
+        
+
+    </section>
+
 
     <script>
         function toggleMobileMenu() {
@@ -54,17 +78,17 @@
         }
 
         // Fermer le menu mobile en cliquant à l'extérieur
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            
+
             if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                 mobileMenu.classList.remove('active');
             }
         });
 
         // Effet de scroll pour la navbar
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 10) {
                 navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
@@ -73,6 +97,7 @@
             }
         });
     </script>
-    
+
 </body>
+
 </html>
