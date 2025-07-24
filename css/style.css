@@ -1,5 +1,5 @@
- .body {
-     font-family: 'Montserrat Alternates', sans-serif;
+ body {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
      background-color: #f8f9fa;
      overflow-x: hidden;
  }
@@ -7,22 +7,19 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
- .nav-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 15px 20px;
- }
-
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  align-items: center;
+}
  .logo {
      display: flex;
      align-items: center;
@@ -191,7 +188,7 @@
      }
  }
 
- /* Small mobile responsive */
+ 
  @media (max-width: 480px) {
      .nav-container {
          padding: 10px 15px;
@@ -261,7 +258,7 @@
      }
  }
 
- /* Styles pour le contenu de démonstration */
+ 
  .demo-content {
      padding: 60px 20px;
      text-align: center;
@@ -297,6 +294,7 @@
  .services {
      padding: 80px 0;
      background: var(--bg-light);
+     border-radius: 10px;
  }
 
  .container {
@@ -311,6 +309,8 @@
      font-weight: 700;
      margin-bottom: 1rem;
      color: var(--primary-color);
+      border-radius: 15px;
+      box-shadow: #181010;
  }
 
  .section-subtitle {
@@ -357,7 +357,7 @@
 
  .bi {
      font-size: 40px;
-     color: #198754;
+     color: #3108e9;
  }
 
  .service-card h3 {
