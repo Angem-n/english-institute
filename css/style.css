@@ -583,115 +583,122 @@
      margin: 20px;
 
  }
+
  footer {
-            background: #1f2937;
-            padding: 30px 20px 15px;
-            color: white;
-        }
+     background: #1f2937;
+     padding: 30px 20px 15px;
+     color: white;
+ }
 
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            align-items: start;
-        }
+ .footer-content {
+     max-width: 1000px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap: 30px;
+     align-items: start;
+ }
 
-        .footer-section {
-            text-align: center;
-        }
+ .footer-section {
+     text-align: center;
+ }
 
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+ .logo-section {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
 
-        .logo-section img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-        }
+ .logo-section img {
+     width: 120px;
+     height: auto;
+     margin-bottom: 15px;
+     padding: 10px;
+     border-radius: 8px;
+     overflow: hidden;
+     transition: .3s;
+ }
+ .logo-section :hover{
 
-        .logo-section p {
-            color: #d1d5db;
-            font-size: 14px;
-            text-align: center;
-        }
+     scale: 1.1;
+ 
+ }
 
-        .footer-section h3 {
-            color: #60a5fa;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+ .logo-section p {
+     color: #d1d5db;
+     font-size: 14px;
+     text-align: center;
+ }
 
-        .footer-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+ .footer-section h3 {
+     color: #60a5fa;
+     font-size: 16px;
+     margin-bottom: 15px;
+     font-weight: 600;
+ }
 
-        .footer-nav a {
-            color: #d1d5db;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            padding: 2px 0;
-        }
+ .footer-nav {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+ }
 
-        .footer-nav a:hover {
-            color: #60a5fa;
-        }
+ .footer-nav a {
+     color: #d1d5db;
+     text-decoration: none;
+     font-size: 14px;
+     transition: color 0.3s ease;
+     padding: 2px 0;
+ }
 
-        .contact-info p {
-            color: #d1d5db;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
+ .footer-nav a:hover {
+     color: #60a5fa;
+ }
 
-        .contact-info i {
-            color: #60a5fa;
-            margin-right: 8px;
-            width: 16px;
-        }
+ .contact-info p {
+     color: #d1d5db;
+     font-size: 14px;
+     margin-bottom: 8px;
+ }
 
-        .map-container {
-            margin-top: 15px;
-        }
+ .contact-info i {
+     color: #60a5fa;
+     margin-right: 8px;
+     width: 16px;
+ }
 
-        .map-container iframe {
-            width: 100%;
-            height: 150px;
-            border: 0;
-            border-radius: 6px;
-        }
+ .map-container {
+     margin-top: 15px;
+ }
 
-        .footer-bottom {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-            font-size: 12px;
-        }
+ .map-container iframe {
+     width: 100%;
+     height: 150px;
+     border: 0;
+     border-radius: 6px;
+ }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
+ .footer-bottom {
+     text-align: center;
+     margin-top: 25px;
+     padding-top: 15px;
+     border-top: 1px solid #374151;
+     color: #9ca3af;
+     font-size: 12px;
+ }
 
-            .logo-section img {
-                width: 100px;
-            }
+ 
+ @media (max-width: 768px) {
+     .footer-content {
+         grid-template-columns: 1fr;
+         gap: 25px;
+     }
 
-            .map-container iframe {
-                height: 130px;
-            }
-        }
+     .logo-section img {
+         width: 100px;
+     }
+
+     .map-container iframe {
+         height: 130px;
+     }
+ }
