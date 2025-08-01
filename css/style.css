@@ -1,8 +1,9 @@
  body {
      font-family: 'Courier New', Courier, monospace;
-     
-     
+
+
  }
+
 
 
  .navbar {
@@ -34,7 +35,8 @@
      transition: .3s;
 
  }
-  .logo :hover {
+
+ .logo :hover {
 
      scale: 1.1;
 
@@ -243,34 +245,197 @@
      font-size: 1.1rem;
      line-height: 1.6;
  }
-.carousel{
-    width: 100%;
-}
-.carousel-container{
-    align-items: center;
-    display: flex;
-    height: 400px;
-    margin: 0 auto;
-    position: relative;
-}
-.carousel-item{
-    height: 200px;
-    opacity: 0;
-    position: absolute;
-    transition: all 0.3s ease-in-out;
-    width: 330px;
-    z-index: 0;
-    border-radius: 15px;
-    background-size: contain;
-}
-.carousel-item-1{
- left: 15% ;
- opacity: -4;
- transform: translateX(-50%) ;
-}
-.carousel-item-2{
-    
-}
+
+ 
+  
+        .carousel-container {
+            width: 100%;
+            padding: 0 40px;
+            margin: 20px 0;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            max-height: 500px;
+            min-height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .slides-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #333;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .carousel-container {
+                padding: 0 30px;
+            }
+            
+            .carousel {
+                height: 60vh;
+                max-height: 450px;
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding: 0 20px;
+                margin: 15px 0;
+            }
+            
+            .carousel {
+                height: 50vh;
+                max-height: 350px;
+                min-height: 250px;
+                border-radius: 12px;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .prev-btn {
+                left: 15px;
+            }
+            
+            .next-btn {
+                right: 15px;
+            }
+            
+            .indicators {
+                bottom: 15px;
+                gap: 6px;
+            }
+            
+            .indicator {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                padding: 0 15px;
+                margin: 10px 0;
+            }
+            
+            .carousel {
+                height: 45vh;
+                max-height: 300px;
+                min-height: 220px;
+                border-radius: 10px;
+            }
+            
+            .nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+            
+            .prev-btn {
+                left: 10px;
+            }
+            
+            .next-btn {
+                right: 10px;
+            }
+            
+            .indicators {
+                bottom: 10px;
+            }
+        }
 
 
 
@@ -387,7 +552,7 @@
  .about-section {
      padding: 30px 20px;
      background-color: #f8f9fa;
-     
+
  }
 
  .about-container {
