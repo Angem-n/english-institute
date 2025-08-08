@@ -246,218 +246,204 @@
      line-height: 1.6;
  }
 
- 
-  
-        .carousel-container {
-            width: 100%;
-            padding: 0 40px;
-            margin: 20px 0;
-        }
-
-        .carousel {
+ .carousel-section {
             position: relative;
             width: 100%;
-            height: 70vh;
-            max-height: 500px;
-            min-height: 350px;
-            border-radius: 15px;
+            height: 500px;
             overflow: hidden;
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 1200px;
         }
 
-        .slides-container {
+        .carousel-container {
             position: relative;
             width: 100%;
             height: 100%;
         }
 
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        .carousel-track {
+            display: flex;
             height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            /* La largeur se calcule dynamiquement selon le nombre de slides */
         }
 
-        .slide.active {
-            opacity: 1;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
+        .carousel-slide {
+            flex: 1;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        .nav-btn:hover {
-            background: white;
-            color: #333;
-            transform: translateY(-50%) scale(1.05);
-        }
-
-        .prev-btn {
-            left: 20px;
-        }
-
-        .next-btn {
-            right: 20px;
-        }
-
-        .indicators {
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
             position: absolute;
-            bottom: 20px;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            /* S'adapte à toutes les tailles d'images */
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            z-index: 2;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 8px;
+            gap: 15px;
             z-index: 10;
         }
 
-        .indicator {
-            width: 10px;
-            height: 10px;
+        .nav-dot {
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .indicator.active {
+        .nav-dot.active {
             background: white;
             transform: scale(1.2);
         }
 
-        .indicator:hover {
+        .nav-dot:hover {
             background: rgba(255, 255, 255, 0.8);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .carousel-container {
-                padding: 0 30px;
-            }
-            
-            .carousel {
-                height: 60vh;
-                max-height: 450px;
-                min-height: 300px;
-            }
+        /* Flèches de navigation */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
+        .carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow.prev {
+            left: 30px;
+        }
+
+        .carousel-arrow.next {
+            right: 30px;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .carousel-container {
-                padding: 0 20px;
-                margin: 15px 0;
+            .carousel-section {
+                height: 400px;
+                margin: 20px auto;
+                border-radius: 10px;
             }
-            
-            .carousel {
-                height: 50vh;
-                max-height: 350px;
-                min-height: 250px;
-                border-radius: 12px;
+
+            .slide-content h2 {
+                font-size: 2rem;
             }
-            
-            .nav-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+
+            .slide-content p {
+                font-size: 1.1rem;
             }
-            
-            .prev-btn {
-                left: 15px;
+
+            .carousel-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 16px;
             }
-            
-            .next-btn {
-                right: 15px;
+
+            .carousel-arrow.prev {
+                left: 20px;
             }
-            
-            .indicators {
-                bottom: 15px;
-                gap: 6px;
+
+            .carousel-arrow.next {
+                right: 20px;
             }
-            
-            .indicator {
-                width: 8px;
-                height: 8px;
+
+            .nav-dot {
+                width: 12px;
+                height: 12px;
             }
         }
 
         @media (max-width: 480px) {
-            .carousel-container {
-                padding: 0 15px;
-                margin: 10px 0;
+            .carousel-section {
+                height: 350px;
+                margin: 15px;
             }
-            
-            .carousel {
-                height: 45vh;
-                max-height: 300px;
-                min-height: 220px;
-                border-radius: 10px;
+
+            .slide-overlay {
+                padding: 20px;
             }
-            
-            .nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
+
+            .slide-content h2 {
+                font-size: 1.5rem;
             }
-            
-            .prev-btn {
-                left: 10px;
-            }
-            
-            .next-btn {
-                right: 10px;
-            }
-            
-            .indicators {
-                bottom: 10px;
+
+            .slide-content p {
+                font-size: 1rem;
             }
         }
-
-
-
-
-
- .services {
-     padding: 80px 0;
-     background: linear-gradient(to bottom, #f1f1f1, #ffffff);
-     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
- }
-
- @keyframes slide {
-     from {
-         transform: translateY(100%);
-         opacity: 0;
-     }
-
-     to {
-         transform: translateY(0);
-         opacity: 1;
-     }
- }
 
  .container {
      max-width: 1200px;
