@@ -25,19 +25,19 @@
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Accueil</a>
+                    <a href="#home" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link has-dropdown">Produits & Services</a>
+                    <a href="#services" class="nav-link has-dropdown"> Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Tarifs</a>
+                    <a href="#about-section" class="nav-link">a propos</a>
                 </li>
 
 
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">FAQs</a>
+                    <a href="#partenaires" class="nav-link">partenaires</a>
                 </li>
             </ul>
 
@@ -50,89 +50,70 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-nav-menu">
-                <li><a href="#" class="nav-link">Accueil</a></li>
-                <li><a href="#" class="nav-link">Produits & Services</a></li>
-                <li><a href="#" class="nav-link">Tarifs</a></li>
-                <li><a href="#" class="nav-link">Témoignages</a></li>
-                <li><a href="#" class="nav-link">Points relais</a></li>
-                <li><a href="#" class="nav-link">Apprendre</a></li>
-                <li><a href="#" class="nav-link">FAQs</a></li>
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about-section" class="nav-link">à propos</a></li>
+                <li><a href="#partenaires" class="nav-link">partenaires</a></li>
+                
             </ul>
-            <div class="mobile-cta">
-                <a href="#" class="cta-button" style="display: block; text-align: center;">Ouvrir un compte gratuit</a>
-            </div>
+           
         </div>
     </nav>
     </nav>
-    <section class="carousel-section">
+    <section id="home" class="carousel-section">
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
-                <!-- Slide 1 -->
+               
                 <div class="carousel-slide">
                     <img src="img/importance-of-learning-english-jpg.webp"
                         alt="Salle de classe moderne">
                     <div class="slide-overlay">
-                        <div class="slide-content">
-                            <h2>Apprenez l'Anglais</h2>
-                            <p>Découvrez notre méthode innovante pour maîtriser l'anglais rapidement et efficacement</p>
-                        </div>
+                        
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+               
                 <div class="carousel-slide">
                     <img src="img/teaching-ielts-english-institute.jpg"
                         alt="Étudiant avec livres">
                     <div class="slide-overlay">
-                        <div class="slide-content">
-                            <h2>Cours Personnalisés</h2>
-                            <p>Des formations adaptées à votre niveau et à vos objectifs professionnels</p>
-                        </div>
+                        
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
+                
                 <div class="carousel-slide">
                     <img src="img/the-english-institute-en-denia.png"
                         alt="Professeur enseignant">
                     <div class="slide-overlay">
-                        <div class="slide-content">
-                            <h2>Professeurs Experts</h2>
-                            <p>Une équipe de formateurs natifs et certifiés pour vous accompagner</p>
-                        </div>
+                     
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
+                
                 <div class="carousel-slide">
                     <img src="img/206307105_l_rid.jpg"
                         alt="Groupe d'étudiants">
                     <div class="slide-overlay">
-                        <div class="slide-content">
-                            <h2>Résultats Garantis</h2>
-                            
-                        </div>
+                        
                     </div>
                 </div>
 
-                <!-- Slide 5 -->
+                
                 <div class="carousel-slide">
                     <img src="img/english_institute_how_to_choose_the_best_to_learn_english_1717008013.jpg"
                         alt="Session d'étude">
                     <div class="slide-overlay">
-                        <div class="slide-content">
-                            <h2>Commencez Aujourd'hui</h2>
-                            
-                        </div>
+                       
                     </div>
                 </div>
             </div>
 
-            <!-- Flèches de navigation -->
+            
             <button class="carousel-arrow prev" id="prevBtn">&#8249;</button>
             <button class="carousel-arrow next" id="nextBtn">&#8250;</button>
 
-            <!-- Navigation par points -->
+            
             <div class="carousel-nav">
                 <div class="nav-dot active" data-slide="0"></div>
                 <div class="nav-dot" data-slide="1"></div>
@@ -329,6 +310,7 @@
 
         <div class="footer-bottom">
             <p>&copy; 2024 IELTS Test Center Abidjan. All rights reserved.</p>
+            <p>designed by ESSOUBO ANGE</p>
         </div>
     </footer>
     <script>
@@ -410,14 +392,14 @@
                     dot.addEventListener('click', () => this.goToSlide(index));
                 });
 
-                // Pause l'autoplay au survol
+                
                 this.track.parentElement.addEventListener('mouseenter', () => this.pauseAutoPlay());
                 this.track.parentElement.addEventListener('mouseleave', () => this.resumeAutoPlay());
 
-                // Gestion du touch/swipe sur mobile
+                
                 this.setupTouchEvents();
 
-                // Démarre l'autoplay
+                
                 this.startAutoPlay();
             }
 
@@ -434,7 +416,7 @@
                     endX = e.changedTouches[0].clientX;
                     const diff = startX - endX;
 
-                    if (Math.abs(diff) > 50) { // Seuil minimum pour le swipe
+                    if (Math.abs(diff) > 50) { 
                         if (diff > 0) {
                             this.goToNextSlide();
                         } else {
@@ -447,7 +429,7 @@
             }
 
             goToSlide(slideIndex) {
-                // S'assure que l'index est dans les limites
+                
                 if (slideIndex >= 0 && slideIndex < this.totalSlides) {
                     this.currentSlide = slideIndex;
                     this.updateCarousel();
@@ -456,28 +438,28 @@
             }
 
             goToNextSlide() {
-                // Défilement séquentiel : passe au slide suivant
+                
                 this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
                 this.updateCarousel();
                 this.resetAutoPlay();
             }
 
             goToPrevSlide() {
-                // Défilement séquentiel : passe au slide précédent
+                
                 this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
                 this.updateCarousel();
                 this.resetAutoPlay();
             }
 
             updateCarousel() {
-                // Calcule la largeur de chaque slide dynamiquement
+                
                 const slideWidth = 100 / this.totalSlides;
                 const translateX = -this.currentSlide * slideWidth;
 
-                // Déplace le track avec la bonne proportion
+               
                 this.track.style.transform = `translateX(${translateX}%)`;
 
-                // Met à jour les points de navigation
+                
                 this.dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === this.currentSlide);
                 });
