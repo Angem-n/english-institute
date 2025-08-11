@@ -1,7 +1,7 @@
  body {
      font-family: 'Courier New', Courier, monospace;
      background-color: #f9f6f1;
-     margin: 0;
+     margin: 0px;
 
 
  }
@@ -76,16 +76,7 @@
      color: #446fb9;
  }
 
- .nav-link.has-dropdown::after {
-     content: '';
-     width: 0;
-     height: 0;
-     border-left: 4px solid transparent;
-     border-right: 4px solid transparent;
-     border-top: 5px solid #a0aec0;
-     margin-left: 8px;
-     transition: transform 0.2s ease;
- }
+ 
 
  .nav-link.has-dropdown:hover::after {
      transform: rotate(180deg);
@@ -116,7 +107,7 @@
      background: none;
      border: none;
      font-size: 24px;
-     color: #4a5568;
+     color: #373f4d;
      cursor: pointer;
      padding: 8px;
  }
@@ -145,7 +136,7 @@
      display: block;
      padding: 16px 24px;
      border-bottom: 1px solid #f7fafc;
-     color: #4a5568;
+     color: #3d4552;
  }
 
  .mobile-nav-menu .nav-link:hover {
