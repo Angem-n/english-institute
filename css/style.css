@@ -513,7 +513,7 @@
      transition: all 0.3s ease;
      position: relative;
      overflow: hidden;
-     margin: 0 auto;
+     margin left: 10px;
  }
 
  .service-card::before {
