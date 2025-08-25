@@ -893,3 +893,57 @@
          height: 130px;
      }
  }
+ /* === Ajustement général pour mobile === */
+@media (max-width: 768px) {
+    .carousel-section {
+        height: 50vh; /* au lieu de fixe */
+    }
+
+    .slide-overlay {
+        padding: 15px;
+    }
+
+    .slide-overlay h2 {
+        font-size: 1.6rem;
+    }
+
+    .slide-overlay p {
+        font-size: 1rem;
+    }
+
+    .carousel-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .nav-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-section {
+        height: 40vh; /* encore plus compact sur petit écran */
+    }
+
+    .slide-overlay h2 {
+        font-size: 1.3rem;
+    }
+
+    .slide-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .nav-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
