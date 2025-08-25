@@ -269,80 +269,193 @@
      line-height: 1.6;
  }
 
- /* Section principale */
-.carousel-section {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 60vh; /* hauteur relative pour s'adapter */
-    min-height: 280px; /* évite qu'il devienne trop petit */
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-}
+ .carousel-section {
+     position: relative;
+     width: 100%;
+     height: 500px;
+     overflow: hidden;
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+     border-radius: 15px;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+     margin: 40px auto;
+     max-width: 1200px;
+ }
 
-/* Slides */
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+ .carousel-container {
+     position: relative;
+     width: 100%;
+     height: 100%;
+ }
 
-/* Overlay (texte sur l'image) */
-.slide-overlay {
-    padding: 5vw; /* padding fluide selon la taille d’écran */
-    font-size: clamp(0.9rem, 2vw, 1.2rem); /* s’adapte automatiquement */
-}
+ .carousel-track {
+     display: flex;
+     height: 100%;
+     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-/* Flèches navigation */
-.carousel-arrow {
-    width: clamp(40px, 8vw, 60px);
-    height: clamp(40px, 8vw, 60px);
-    font-size: clamp(14px, 2.5vw, 20px);
-}
+ }
 
-/* Points navigation */
-.nav-dot {
-    width: clamp(10px, 3vw, 16px);
-    height: clamp(10px, 3vw, 16px);
-}
+ .carousel-slide {
+     flex: 1;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0;
+     vertical-align: top;
+     /* Évite les espaces inline */
+     line-height: 0;
+ }
 
-/* Mobile (tablettes et moins) */
-@media (max-width: 768px) {
-    .carousel-section {
-        height: 50vh;
-        border-radius: 10px;
-    }
-    .slide-content h2 {
-        font-size: clamp(1.2rem, 4vw, 2rem);
-    }
-    .slide-content p {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
-    }
-}
+ .carousel-slide img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     min-width: 100%;
+     min-height: 100%;
+ }
 
-/* Très petits écrans (téléphones) */
-@media (max-width: 480px) {
-    .carousel-section {
-        height: 45vh;
-        margin: 10px;
-    }
-    .slide-overlay {
-        padding: 15px;
-    }
-    .slide-content h2 {
-        font-size: clamp(1rem, 5vw, 1.5rem);
-    }
-    .slide-content p {
-        font-size: clamp(0.8rem, 4vw, 1rem);
-    }
-}
+ .slide-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: transparent;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     color: white;
+     text-align: center;
+     padding: 40px;
+     z-index: 2;
+ }
+
+
+
+ /* Navigation */
+ .carousel-nav {
+     position: absolute;
+     bottom: 30px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     gap: 15px;
+     z-index: 10;
+ }
+
+ .nav-dot {
+     width: 16px;
+     height: 16px;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.4);
+     cursor: pointer;
+     transition: all 0.3s ease;
+     border: 2px solid transparent;
+ }
+
+ .nav-dot.active {
+     background: white;
+     transform: scale(1.2);
+ }
+
+ .nav-dot:hover {
+     background: rgba(255, 255, 255, 0.8);
+ }
+
+ /* Flèches de navigation */
+ .carousel-arrow {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(255, 255, 255, 0.2);
+     border: none;
+     color: white;
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     cursor: pointer;
+     font-size: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.3s ease;
+     z-index: 10;
+     backdrop-filter: blur(10px);
+ }
+
+ .carousel-arrow:hover {
+     background: rgba(255, 255, 255, 0.3);
+     transform: translateY(-50%) scale(1.1);
+ }
+
+ .carousel-arrow.prev {
+     left: 30px;
+ }
+
+ .carousel-arrow.next {
+     right: 30px;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .carousel-section {
+         height: 400px;
+         margin: 20px auto;
+         border-radius: 10px;
+     }
+
+     .slide-content h2 {
+         font-size: 2rem;
+     }
+
+     .slide-content p {
+         font-size: 1.1rem;
+     }
+
+     .carousel-arrow {
+         width: 50px;
+         height: 50px;
+         font-size: 16px;
+     }
+
+     .carousel-arrow.prev {
+         left: 20px;
+     }
+
+     .carousel-arrow.next {
+         right: 20px;
+     }
+
+     .nav-dot {
+         width: 12px;
+         height: 12px;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .carousel-section {
+         height: 350px;
+         margin: 15px;
+     }
+
+     .slide-overlay {
+         padding: 20px;
+     }
+
+     .slide-content h2 {
+         font-size: 1.5rem;
+     }
+
+     .slide-content p {
+         font-size: 1rem;
+     }
+ }
 
  .container {
      max-width: 1200px;
