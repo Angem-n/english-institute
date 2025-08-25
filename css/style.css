@@ -507,7 +507,7 @@
 
  .service-card {
      background: white;
-     padding: 2rem;
+     padding: 4rem;
      border-radius: 15px;
      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
      transition: all 0.3s ease;
@@ -893,38 +893,4 @@
          height: 130px;
      }
  }
- /* Uniformiser les cartes (services & about) */
-.service-card, 
-.about-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* Uniformiser les titres des cartes */
-.service-card h3, 
-.about-card .card-title {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    text-align: left; /* ou center si tu veux */
-}
-
-/* Uniformiser le texte */
-.service-card p, 
-.about-card .card-text {
-    color: #555;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-/* Uniformiser les icônes (emoji ou Bootstrap) */
-.about-card .card-title::before {
-    content: "📘"; /* Icône choisie */
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 1.5rem;
-    vertical-align: middle;
-}
+ 
