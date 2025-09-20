@@ -54,73 +54,69 @@
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#about-section" class="nav-link">à propos</a></li>
                 <li><a href="#partenaires" class="nav-link">partenaires</a></li>
-                
+
             </ul>
-           
+
         </div>
     </nav>
     </nav>
     <section id="home" class="carousel-section">
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
-               
+
                 <div class="carousel-slide">
-                    <img src="img/importance-of-learning-english-jpg.webp"
-                        alt="Salle de classe moderne">
+                    <img src="img/importance-of-learning-english-jpg.webp" alt="Salle de classe moderne">
                     <div class="slide-overlay">
-                        
+
                     </div>
                 </div>
 
-               
+
                 <div class="carousel-slide">
-                    <img src="img/teaching-ielts-english-institute.jpg"
-                        alt="Étudiant avec livres">
+                    <img src="img/teaching-ielts-english-institute.jpg" alt="Étudiant avec livres">
                     <div class="slide-overlay">
-                        
+
                     </div>
                 </div>
 
-                
+
                 <div class="carousel-slide">
-                    <img src="img/the-english-institute-en-denia.png"
-                        alt="Professeur enseignant">
+                    <img src="img/the-english-institute-en-denia.png" alt="Professeur enseignant">
                     <div class="slide-overlay">
-                     
+
                     </div>
                 </div>
 
-                
+
                 <div class="carousel-slide">
-                    <img src="img/206307105_l_rid.jpg"
-                        alt="Groupe d'étudiants">
+                    <img src="img/206307105_l_rid.jpg" alt="Groupe d'étudiants">
                     <div class="slide-overlay">
-                        
+
                     </div>
                 </div>
 
-                
+
                 <div class="carousel-slide">
                     <img src="img/english_institute_how_to_choose_the_best_to_learn_english_1717008013.jpg"
                         alt="Session d'étude">
                     <div class="slide-overlay">
-                       
+
                     </div>
                 </div>
             </div>
 
-            
+
             <button class="carousel-arrow prev" id="prevBtn">&#8249;</button>
             <button class="carousel-arrow next" id="nextBtn">&#8250;</button>
 
-            
+
             <div class="carousel-nav">
                 <div class="nav-dot active" data-slide="0"></div>
                 <div class="nav-dot" data-slide="1"></div>
                 <div class="nav-dot" data-slide="2"></div>
                 <div class="nav-dot" data-slide="3"></div>
                 <div class="nav-dot" data-slide="4"></div>
-               
+
             </div>
         </div>
     </section>
@@ -181,6 +177,15 @@
                     </div>
                     <h3>Traduction & Interprétariat</h3>
                     <p>Services de traduction certifiée et d'interprétariat spontané pour vos besoins professionnels.
+                    </p>
+                </div>
+
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="bi bi-chat-dots-fill"></i>
+                    </div>
+                    <h3>escorte billingue</h3>
+                    <p>Accompagnement et traduction pour vous lors de conférences et événements
                     </p>
                 </div>
             </div>
@@ -392,14 +397,14 @@
                     dot.addEventListener('click', () => this.goToSlide(index));
                 });
 
-                
+
                 this.track.parentElement.addEventListener('mouseenter', () => this.pauseAutoPlay());
                 this.track.parentElement.addEventListener('mouseleave', () => this.resumeAutoPlay());
 
-                
+
                 this.setupTouchEvents();
 
-                
+
                 this.startAutoPlay();
             }
 
@@ -416,7 +421,7 @@
                     endX = e.changedTouches[0].clientX;
                     const diff = startX - endX;
 
-                    if (Math.abs(diff) > 50) { 
+                    if (Math.abs(diff) > 50) {
                         if (diff > 0) {
                             this.goToNextSlide();
                         } else {
@@ -429,7 +434,7 @@
             }
 
             goToSlide(slideIndex) {
-                
+
                 if (slideIndex >= 0 && slideIndex < this.totalSlides) {
                     this.currentSlide = slideIndex;
                     this.updateCarousel();
@@ -438,28 +443,28 @@
             }
 
             goToNextSlide() {
-                
+
                 this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
                 this.updateCarousel();
                 this.resetAutoPlay();
             }
 
             goToPrevSlide() {
-                
+
                 this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
                 this.updateCarousel();
                 this.resetAutoPlay();
             }
 
             updateCarousel() {
-                
+
                 const slideWidth = 100 / this.totalSlides;
                 const translateX = -this.currentSlide * slideWidth;
 
-               
+
                 this.track.style.transform = `translateX(${translateX}%)`;
 
-                
+
                 this.dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === this.currentSlide);
                 });
