@@ -781,7 +781,7 @@
 
 
  footer {
-     background: #1a5cb8;
+     background: #101111;
      padding: 30px 20px 15px;
      color: white;
  }
@@ -850,7 +850,7 @@
  }
 
  .footer-nav a:hover {
-     color: #222324;
+     color: #dbe0e6;
  }
 
  .contact-info p {
